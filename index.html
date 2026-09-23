@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page - Samily Fogaça</title>
+    
+    <!-- Estilos CSS Incorporados -->
+    <style>
+        /* ==========================================================================
+           RESETE E CONFIGURAÇÕES GERAIS
+           ========================================================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            background-color: #fff5f8;
+            color: #4a4a4a;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* ==========================================================================
+           ESTRUTURA E LAYOUT
+           ========================================================================== */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #d63384;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: #ff85a1;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* ==========================================================================
+           CABEÇALHO E NAVEGAÇÃO
+           ========================================================================== */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #d63384;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            color: #6c757d;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #d63384;
+        }
+
+        /* ==========================================================================
+           HERO SECTION (BANNER PRINCIPAL)
+           ========================================================================== */
+        .hero {
+            background: linear-gradient(135deg, #ffb6c1 0%, #ffd1dc 100%);
+            padding: 100px 0 80px 0;
+            text-align: center;
+            color: #4a4a4a;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: #8b0046;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #d63384;
+            color: #ffffff;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            box-shadow: 0 4px 15px rgba(214, 51, 132, 0.3);
+        }
+
+        .btn:hover {
+            background-color: #b8256f;
+            transform: translateY(-3px);
+        }
+
+        /* ==========================================================================
+           SOBRE MIM
+           ========================================================================== */
+        .about-card {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* ==========================================================================
+           HOBBIES E INTERESSES (CARDS)
+           ========================================================================== */
+        .hobbies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .hobby-card {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s ease;
+            border-top: 4px solid #ff85a1;
+        }
+
+        .hobby-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .hobby-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .hobby-card h3 {
+            font-size: 1.3rem;
+            color: #d63384;
+            margin-bottom: 10px;
+        }
+
+        /* ==========================================================================
+           TECNOLOGIAS E ESTUDOS
+           ========================================================================== */
+        .tech-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .tech-box {
+            background-color: #ffffff;
+            padding: 20px 30px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #4a4a4a;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            border-left: 5px solid #d63384;
+        }
+
+        /* ==========================================================================
+           OBJETIVO DE FUTURO
+           ========================================================================== */
+        .goal-card {
+            background: linear-gradient(135deg, #ffffff 0%, #fff0f5 100%);
+            border: 2px dashed #ff85a1;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        /* ==========================================================================
+           RODAPÉ
+           ========================================================================== */
+        footer {
+            background-color: #2b2b2b;
+            color: #ffffff;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            color: #cccccc;
+        }
+
+        /* ==========================================================================
+           RESPONSIVIDADE (ADAPTAÇÃO A DISPOSITIVOS MÓVEIS)
+           ========================================================================== */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <div class="container navbar">
+            <div class="logo">Samily Fogaça</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#sobre">Sobre Mim</a></li>
+                    <li><a href="#hobbies">Hobbies</a></li>
+                    <li><a href="#aprendizado">Tecnologias</a></li>
+                    <li><a href="#objetivos">Objetivos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- SEÇÃO PRINCIPAL (HERO) -->
+    <section class="hero">
+        <div class="container">
+            <h1>Olá, eu sou a Samily Fogaça! 💕</h1>
+            <p>Estudante de Tecnologia | Católica</p>
+            <a href="#sobre" class="btn">Saber mais sobre mim</a>
+        </div>
+    </section>
+
+    <!-- SOBRE MIM -->
+    <section id="sobre">
+        <div class="container">
+            <h2 class="section-title">Sobre Mim</h2>
+            <div class="about-card">
+                <p>
+                   O meu nome é <strong>Samily Fogaça</strong>, tenho 16 anos e sou católica! Sou uma pessoa bem dedicada, alegre e que valoriza muito a fé, a família e os momentos simples da vida. No meu dia a dia, gosto de manter uma rotina leve, cuidando de mim e passando tempo com quem mais gosto.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOBBIES E INTERESSES -->
+    <section id="hobbies">
+        <div class="container">
+            <h2 class="section-title">O Que Eu Gosto de Fazer</h2>
+            <div class="hobbies-grid">
+                
+                <div class="hobby-card">
+                    <span class="hobby-icon">🏋️‍♀️</span>
+                    <h3>Treinar na Academia</h3>
+                    <p>Adoro ir à academia na companhia das minhas amigas para manter a rotina saudável e divertida.</p>
+                </div>
+
+                <div class="hobby-card">
+                    <span class="hobby-icon">⛪</span>
+                    <h3>Igreja e Amigos</h3>
+                    <p>Ir à igreja e participar dos retiros incríveis junto com os meus amigos da comunidade.</p>
+                </div>
+
+                <div class="hobby-card">
+                    <span class="hobby-icon">🎬</span>
+                    <h3>Séries e Filmes</h3>
+                    <p>Aproveitar os momentos livres para maratonar boas séries e ver filmes.</p>
+                </div>
+
+                <div class="hobby-card">
+                    <span class="hobby-icon">🐶</span>
+                    <h3>Brincar com o Feijão</h3>
+                    <p>Passar momentos de muito carinho e diversão com o meu cachorro Feijão.</p>
+                </div>
+
+                <div class="hobby-card">
+                    <span class="hobby-icon">💅</span>
+                    <h3>Pintar as Unhas</h3>
+                    <p>Expressar a minha criatividade e estilo ao cuidar e pintar as unhas.</p>
+                </div>
+
+                <div class="hobby-card">
+                    <span class="hobby-icon">✨</span>
+                    <h3>Autocuidado e Bem-Estar</h3>
+                    <p>Dedicar tempo a cuidar de mim mesma, da minha pele, cabelo e saúde mental.</p>
+                </div>
+
+                <div class="hobby-card">
+                    <span class="hobby-icon">🎶</span>
+                    <h3>Dançar e Ouvir Música</h3>
+                    <p>Colocar as minhas músicas favoritas para tocar e dançar para descontrair o dia.</p>
+                </div>
+
+                <div class="hobby-card">
+                    <span class="hobby-icon">🛍️</span>
+                    <h3>Compras</h3>
+                    <p>Adoro renovar o visual e fazer compras de maquiagem e roupas novas.</p>
+                </div>
+
+                <div class="hobby-card">
+                    <span class="hobby-icon">😴</span>
+                    <h3>Dormir e Comer</h3>
+                    <p>Nada substitui uma boa noite de sono reparador e apreciar refeições saborosas!</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TECNOLOGIAS E APRENDIZADOS -->
+    <section id="aprendizado">
+        <div class="container">
+            <h2 class="section-title">O QUE QUERO APRENDER E POSSÍVEIS PROFISSÕES</h2>
+            <div class="tech-container">
+                <div class="tech-box">Psicologia e Comportamento Humano</div>
+                <div class="tech-box">Desenvolvimento Infantil e Pediatria</div>
+                <div class="tech-box">Design</div>
+                <div class="tech-box">Publicidade e Propaganda</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OBJETIVOS DE FUTURO -->
+    <section id="objetivos">
+        <div class="container">
+            <h2 class="section-title">Objetivos de Futuro</h2>
+            <div class="goal-card">
+                <p>
+                    O meu foco principal agora é estudar bastante e trabalhar para juntar o meu próprio dinheiro para pagar a faculdade. Quero construir a minha carreira numa área que eu realmente goste, tendo como metas principais <strong>Pediatria</strong>, <strong>Psicologia</strong> ou <strong>Publicidade e Propaganda</strong>. Busco conquistar a minha independência financeira e trabalhar com algo que traga propósito para a minha vida.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <div class="container">
+            <p>&copy; Landing Page Pessoal desenvolvida por Samily Fogaça para a disciplina de Tecnologia.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
